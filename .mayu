@@ -1,0 +1,67 @@
+include "linux104.mayu"
+keymap Global
+
+# CapsLockをControlに
+mod Control += CapsLock
+key *CapsLock = *LeftControl
+
+# Emacs風の移動
+key C-A = Home
+key S-C-A = S-Home
+key C-E = End
+key S-C-E = S-End
+key C-F = Right
+key S-C-F = S-Right
+key C-B = Left
+key S-C-B = S-Left
+key C-P = Up
+key S-C-P = S-Up
+key C-N = Down
+key S-C-N = S-Down
+
+# Quoteが打てなくなるので代用
+key C-Quote = Quote
+
+# 右キーはFn同様カーソル移動に使う
+#mod mod0 = !Right
+#key M0-OpenBracket = Up
+#key M0-Slash = Down
+#key M0-Quote = Right
+#key M0-Semicolon = Left
+
+# PageUp=l,PageDown=.,Home=k,End=,キーを設定
+
+# PageUp,PageDown,Home,Endキーを無効に
+
+# カーソルキーはShiftに
+mod shift += Up
+key *Up = RightShift
+mod shift += Down
+key *Down = RightShift
+mod shift += Left
+key *Left = RightShift
+mod shift += Right
+key *Right = RightShift
+
+# Fn+[;/でHHK風にカーソル移動、Shift+カーソルも利用
+key NumEnter = Up
+key NumPlus = Down
+key Quote = Right
+key NumMinus = Left
+key S-NumEnter = S-Up
+key S-NumPlus = S-Down
+key S-Quote = S-Right
+key S-NumMinus = S-Left
+
+
+# 右Altキー+hjklでカーソル移動
+mod alt -= RightAlt
+mod mod1 = !RightAlt
+key M1-h = Left
+key M1-j = Down
+key M1-k = UP
+key M1-l = Right
+key S-M1-h = S-Left
+key S-M1-j = S-Down
+key S-M1-k = S-UP
+key S-M1-l = S-Right

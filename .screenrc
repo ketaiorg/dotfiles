@@ -1,0 +1,4 @@
+escape ^z^z
+vbell off
+hardstatus alwayslastline "VAIO-P (%l) %Y/%m/%d %c  %w"
+sorendition "+r kw"

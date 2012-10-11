@@ -1,0 +1,9 @@
+[user]
+	email = github@ke-tai.org
+	name = Kentaro Matsui
+[color]
+	ui = true
+[alias]
+	st = status
+	co = checkout
+	g = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
