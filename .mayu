@@ -1,9 +1,15 @@
+# .mayu for VAIO-P(VPCP11AKJ)
+# 前提 OS側のコントロールパネルで以下の設定が行われていること
+#  CapsLockとControlキーを入れ替える
+#
 include "linux104.mayu"
 keymap Global
 
-# CapsLockをControlに
-mod Control += CapsLock
-key *CapsLock = *LeftControl
+# NumLockをCapsLockに
+key *NumLock = CapsLock
+
+# 検索
+key M-f = C-F
 
 # Emacs風の移動
 key C-A = Home
@@ -21,29 +27,38 @@ key S-C-N = S-Down
 
 # Quoteが打てなくなるので代用
 key C-Quote = Quote
+mod mod0 = !Left
+mod mod0 = !Down
+mod mod0 = !Right
+key M0-Left = Quote
 
-# 右キーはFn同様カーソル移動に使う
-#mod mod0 = !Right
-#key M0-OpenBracket = Up
-#key M0-Slash = Down
-#key M0-Quote = Right
-#key M0-Semicolon = Left
+# Fn+l.キーでHHK風にPageUp,PageDown、Shiftキーにも対応
+key Num3 = PageUp
+key NumPeriod = PageDown
+key S-Num3 = S-PageUp
+key S-NumPeriod = S-PageDown
 
-# PageUp=l,PageDown=.,Home=k,End=,キーを設定
-
-# PageUp,PageDown,Home,Endキーを無効に
+# PageUp,PageDown,Home,EndキーはShiftに
+mod shift += PageUp
+key *PageUp = *RightShift
+mod shift += PageDown
+key *PageDown = *RightShift
+mod shift += Home
+key *Home = *RightShift
+mod shift += End
+key *End = *RightShift
 
 # カーソルキーはShiftに
 mod shift += Up
-key *Up = RightShift
+key *Up = *RightShift
 mod shift += Down
-key *Down = RightShift
+key *Down = *RightShift
 mod shift += Left
-key *Left = RightShift
+key *Left = *RightShift
 mod shift += Right
-key *Right = RightShift
+key *Right = *RightShift
 
-# Fn+[;/でHHK風にカーソル移動、Shift+カーソルも利用
+# Fn+[;/キーでHHK風にカーソル移動、Shift+カーソルも利用
 key NumEnter = Up
 key NumPlus = Down
 key Quote = Right
@@ -53,8 +68,7 @@ key S-NumPlus = S-Down
 key S-Quote = S-Right
 key S-NumMinus = S-Left
 
-
-# 右Altキー+hjklでカーソル移動
+# 右Altキー+hjklでカーソル移動、Shift+カーソルも利用
 mod alt -= RightAlt
 mod mod1 = !RightAlt
 key M1-h = Left
