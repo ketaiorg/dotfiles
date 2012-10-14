@@ -29,6 +29,14 @@ set nobackup
 set noswapfile
 set directory=~/.vim/swp
 
+" 保存はWindows風
+noremap <C-S> :w<CR>
+inoremap <C-S> <Esc>:w<CR>
+
+" 終了はWindows風
+noremap <C-Q> :q<CR>
+inoremap <C-Q> <Esc>:q<CR>
+
 " バックスペースで何でも消せるように
 set backspace=indent,eol,start
 
@@ -93,16 +101,34 @@ set hlsearch
 
 "" カーソル行のハイライト
 "" カレントウィンドウにのみ罫線を引く
-"augroup cch
-"	autocmd! cch
-"	autocmd WinLeave * set nocursorline
-"	autocmd WinLeave * set nocursorcolumn
-"	autocmd WinEnter,BufRead * set cursorline
-"	autocmd WinEnter,BufRead * set cursorcolumn
-"augroup END
+set cursorline
+augroup cch
+	autocmd! cch
+	autocmd WinLeave * set nocursorline
+ 	autocmd WinLeave * set nocursorcolumn
+	autocmd WinEnter,BufRead * set cursorline
+	autocmd WinEnter,BufRead * set cursorcolumn
+augroup END
+:hi clear CursorLine
+:hi CursorLine gui=underline
+hi CursorLine ctermbg=black guibg=black
+:hi clear CursorColumn
+:hi CursorColumn gui=underline
+hi CursorColumn ctermbg=black guibg=black
+
+" 入力モード時、ステータスラインのカラーを変更
+" augroup InsertHook
+"   autocmd!
+"   autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
+"   autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
+" augroup END
+
 
 " xはヤンクしない
 " nnoremap <buffer> x v"xc<ESC>l"
 
 " ファイルを開き直した時にカーソルの位置を記憶
 
+
+" Evervimプラグインの使用
+Bundle 'evervim'
