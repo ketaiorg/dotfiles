@@ -128,7 +128,10 @@ hi CursorColumn ctermbg=black guibg=black
 " nnoremap <buffer> x v"xc<ESC>l"
 
 " ファイルを開き直した時にカーソルの位置を記憶
-
+" ~/.viminfoに書き込み権限がある必要があることに注意
+if has("autocmd") 
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+endif 
 
 " Evervimプラグインの使用
 Bundle 'evervim'
