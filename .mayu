@@ -1,5 +1,8 @@
 # .mayu for VAIO-P(VPCP11AKJ)
 #
+# 前提 OS側のコントロールパネルで以下の設定が行われていること
+#  CapsLockとControlキーを入れ替える
+#
 include "linux104.mayu"
 keymap Global
 
@@ -26,6 +29,8 @@ key C-P = Up
 key S-C-P = S-Up
 key C-N = Down
 key S-C-N = S-Down
+key C-H = BackSpace
+key C-D = Delete
 
 # Quoteが打てなくなるので代用
 key C-Quote = Quote
