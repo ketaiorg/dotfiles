@@ -47,13 +47,13 @@ key S-NumPeriod = S-PageDown
 
 # PageUp,PageDown,Home,EndキーはShiftに
 mod shift += PageUp
-key *PageUp = *RightShift
+key *PageUp = RightShift
 mod shift += PageDown
-key *PageDown = *RightShift
+key *PageDown = RightShift
 mod shift += Home
-key *Home = *RightShift
+key *Home = RightShift
 mod shift += End
-key *End = *RightShift
+key *End = RightShift
 
 # カーソルキーはShiftに
 mod shift += Up
