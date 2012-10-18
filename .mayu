@@ -13,8 +13,12 @@ key *NumLock = CapsLock
 mod Control += CapsLock
 key *CapsLock = *LeftControl
 
-# 検索
-key M-f = C-F
+# MacOS風
+key M-F = C-F
+key M-A = C-A
+key M-Z = C-Z
+key M-C = C-C
+key M-V = C-V
 
 # Emacs風の移動
 key C-A = Home
@@ -38,6 +42,8 @@ mod mod0 += !Left
 mod mod0 += !Down
 mod mod0 += !Right
 key *M0-Quote = S-Quote
+mod mod1 += !LeftShift
+key *M1-Quote = S-Quote
 
 # Fn+l.キーでHHK風にPageUp,PageDown、Shiftキーにも対応
 key Num3 = PageUp
@@ -77,12 +83,12 @@ key S-NumMinus = S-Left
 
 # 右Altキー+hjklでカーソル移動、Shift+カーソルも利用
 mod alt -= RightAlt
-mod mod1 = !RightAlt
-key M1-h = Left
-key M1-j = Down
-key M1-k = UP
-key M1-l = Right
-key S-M1-h = S-Left
-key S-M1-j = S-Down
-key S-M1-k = S-UP
-key S-M1-l = S-Right
+mod mod5 = !RightAlt
+key M5-h = Left
+key M5-j = Down
+key M5-k = UP
+key M5-l = Right
+key S-M5-h = S-Left
+key S-M5-j = S-Down
+key S-M5-k = S-UP
+key S-M5-l = S-Right
