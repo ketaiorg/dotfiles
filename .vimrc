@@ -105,7 +105,7 @@ set cursorline
 augroup cch
 	autocmd! cch
 	autocmd WinLeave * set nocursorline
- 	autocmd WinLeave * set nocursorcolumn
+	autocmd WinLeave * set nocursorcolumn
 	autocmd WinEnter,BufRead * set cursorline
 	autocmd WinEnter,BufRead * set cursorcolumn
 augroup END
@@ -116,12 +116,17 @@ hi CursorLine ctermbg=black guibg=black
 :hi CursorColumn gui=underline
 hi CursorColumn ctermbg=black guibg=black
 
+" ステータスラインの変更
+set laststatus=2
+set statusline=%F%m%r%h%w\ %{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ [%04l,%04v][%p%%]
+highlight statusline term=NONE cterm=NONE guifg=red ctermfg=black ctermbg=cyan
+
 " 入力モード時、ステータスラインのカラーを変更
-" augroup InsertHook
-"   autocmd!
-"   autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
-"   autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
-" augroup END
+"augroup InsertHook
+"	autocmd!
+"	autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
+"	autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
+"augroup END
 
 
 " xはヤンクしない
