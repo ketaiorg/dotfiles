@@ -1,4 +1,7 @@
 escape ^z^z
 vbell off
-hardstatus alwayslastline "VAIO-P (%l) %Y/%m/%d %c  %w"
+hardstatus alwayslastline "%H (%l) %Y/%m/%d %c  %L=%-w%45L>%{= k.}%n %t%{-}%+w"
 sorendition "+r kw"
+defbce on
+term xterm-256color
+termcapinfo xterm* 'Co#256:pa#32767:AB=\E[48;5;%dm:AF=\E[38;5;%dm:'
