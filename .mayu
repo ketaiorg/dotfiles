@@ -38,12 +38,13 @@ key C-D = Delete
 
 # Quoteが打てなくなるので代用
 key C-Quote = Quote
-mod mod0 += !Left
+mod mod0 += !UP
 mod mod0 += !Down
+mod mod0 += !Left
 mod mod0 += !Right
+mod mod0 += !LeftShift
+mod mod0 += !RightShift
 key *M0-Quote = S-Quote
-mod mod1 += !LeftShift
-key *M1-Quote = S-Quote
 
 # Fn+l.キーでHHK風にPageUp,PageDown、Shiftキーにも対応
 key Num3 = PageUp
