@@ -1,8 +1,5 @@
 # .mayu for VAIO-P(VPCP11AKJ)
 #
-# 前提 OS側のコントロールパネルで以下の設定が行われていること
-#  CapsLockとControlキーを入れ替える
-#
 include "linux104.mayu"
 keymap Global
 
